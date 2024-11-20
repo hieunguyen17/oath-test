@@ -12,8 +12,8 @@ The project's local environment built using Laravel Sail and Docker. It consists
 ### 1. Clone project
 
 ```
-git clone git@github.com:hieunguyen17/oath-test.git
-cd oath-test
+git clone git@github.com:hieunguyen17/oauth-test.git
+cd oauth-test
 cp .env.example .env
 ```
 ### 2. Set up environment configs
