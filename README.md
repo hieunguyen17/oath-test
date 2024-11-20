@@ -89,6 +89,8 @@ Or
 ./vendor/bin/sail yarn run build
 ```
 
-### 7. Run the project
+## II. Run the project
 
 Open your browser and access [http://localhost:8000](http://localhost:8000)
+
+Check mail at [http://localhost:8025](http://localhost:8025)
