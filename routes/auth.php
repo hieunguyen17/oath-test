@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\AuthenticatedSessionViaOauthController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
@@ -33,6 +34,9 @@ Route::middleware('guest')->group(function () {
 
     Route::post('reset-password', [NewPasswordController::class, 'store'])
         ->name('password.store');
+
+    Route::get('/oauth/{provider}/redirect', [AuthenticatedSessionViaOauthController::class, 'create'])->name('oauth.redirect');
+    Route::get('/oauth/{provider}/callback', [AuthenticatedSessionViaOauthController::class, 'store'])->name('oauth.callback');
 });
 
 Route::middleware('auth')->group(function () {

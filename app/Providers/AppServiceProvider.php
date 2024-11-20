@@ -19,6 +19,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        \Illuminate\Support\Facades\Event::listen(static function (\SocialiteProviders\Manager\SocialiteWasCalled $event) {
+            (new \SocialiteProviders\Google\GoogleExtendSocialite())->handle($event);
+            (new \SocialiteProviders\Facebook\FacebookExtendSocialite())->handle($event);
+            (new \SocialiteProviders\Apple\AppleExtendSocialite())->handle($event);
+            (new \SocialiteProviders\Twitter\TwitterExtendSocialite())->handle($event);
+            (new \SocialiteProviders\Line\LineExtendSocialite())->handle($event);
+        });
     }
 }
