@@ -73,9 +73,17 @@ Create the database and seed data
 ./vendor/bin/sail artisan migrate
 ./vendor/bin/sail artisan db:seed
 ```
+Generate app key
+```
+./vendor/bin/sail artisan key:generate
+```
 
 ### 6. Install JS packages and build JS files
-
+```
+./vendor/bin/sail npm install
+./vendor/bin/sail npm run build
+```
+Or
 ```
 ./vendor/bin/sail yarn install
 ./vendor/bin/sail yarn run build
